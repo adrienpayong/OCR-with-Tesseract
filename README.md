@@ -145,6 +145,26 @@ The classes with the highest counts (after adjusting for the predicted number of
 
 Each unknown characteristic searches for a bit vector of prototypes of the specified class that it potentially match, and then computes the actual similarity between them.
 Because each prototype character class is represented by a logical sum-of-product expression with each term referred to as a configuration, the distance calculation procedure maintains track of the total similarity evidence of each feature in each configuration as well as of each prototype.
-The best combined distance, determined from the summed feature and prototype evidences, is the best across all of the class's recorded configurations. 
+The best combined distance, determined from the summed feature and prototype evidences, is the best across all of the class's recorded configurations.
 
+### Training Data
+
+Because the classifier can readily recognize damaged characters, it was not trained on damaged characters.
+In reality, the classifier was trained on only 20 samples of 94 characters from eight fonts in a single size, but with four attributes (normal, bold, italic, bold italic), for a total of 60160 training samples.
+
+This stands in stark contrast to other published classifiers, such as the Calera classifier, which has over a million training data, and Baird's 100-font classifier, which has 1175000 training samples. 
+
+## Linguistic Analysis
+Tesseract provides just a little amount of language analysis.
+The linguistic module (misnamed the permuter) selects the best available word string in each of the following categories whenever the word recognition module considers a new segmentation:
+Top dictionary term, Top numeric word, Top UPPER case word, Top lower case word (with optional starting upper), Top classifier choice word
+The final selection for a particular segmentation is simply the word with the lowest overall distance rating, multiplied by a separate constant for each of the aforementioned categories.
+
+Words from various segmentations may include a variable number of characters.
+Even when a classifier promises to provide probabilities, which Tesseract does not, it is difficult to compare these terms directly.
+Tesseract solves this challenge by creating two integers for each character classification.
+The first, known as the confidence, is the normalized distance from the prototype minus the confidence.
+This allows it to be a "confidence" in the sense that larger numbers are better, but it is still a distance, since the farther away from zero, the greater the distance.
+The rating is calculated by multiplying the normalized distance from the prototype by the entire outline length of the unknown character.
+Because the overall outline length for all characters inside a word is always the same, ratings for characters within a word may be meaningfully totaled. 
 
