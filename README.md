@@ -10,3 +10,14 @@ Development on this project came to a halt by the end of 1994.
 The engine was sent to UNLV for the 1995 Annual Test of OCR Accuracy, where it outperformed commercial engines at the time.
 HP published Tesseract as open source in late 2005.  It is now available
 at https://github.com/tesseract-ocr.
+
+## Architecture
+
+Tesseract never required its own page layout analysis because HP had separately developed page layout analysis technology that was utilized in products (and hence not provided for open-source), and Tesseract never needed its own page layout analysis.
+As a result, Tesseract believes its input is a binary image with optional polygonal text sections specified.
+
+Processing follows a standard step-by-step pipeline, however some of the phases were odd at the time and may still be so now.
+The first phase is a linked component analysis, in which the component outlines are recorded.
+This was a computationally costly design choice at the time, but it had a huge advantage: it is straightforward to discover inverted text and recognize it as simply as black-on-white text by inspecting the nesting of outlines and the number of child and grandchild outlines.
+Tesseract was most likely the first OCR engine capable of handling white-on-black text so easily.
+At this point, outlines are simply nested together to form Blobs. 
