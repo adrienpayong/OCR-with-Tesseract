@@ -71,3 +71,12 @@ Tesseract slices the words into characters using the pitch when it detects fixed
 
 ![source](https://github.com/adrienpayong/OCRproject/blob/main/Capture2.PNG)
 
+## Proportional Word Finding
+
+Non-fixed-pitch or proportional text spacing is a difficult undertaking.
+Figure 3 depicts some common difficulties.
+The space between the tens and units in '11.9 percent' is comparable to the general space, and is unquestionably greater than the kerned space between 'erated' and 'trash'.
+There is no horizontal space between the boundary boxes 'of' and 'financial.'
+Tesseract overcomes the majority of these issues by measuring gaps in a narrow vertical range between the baseline and the mean line.
+At this step, spaces around the threshold are rendered fuzzy so that a final judgment may be made following word recognition. 
+
