@@ -136,4 +136,15 @@ Three features on one side and two on the other are mismatched, but every other 
 This example demonstrates how this approach of matching minor characteristics to huge prototypes can easily handle the identification of damaged images.
 Its fundamental issue is that determining the distance between an unknown and a prototype has a very high computational cost. The features retrieved from the unknown are therefore three-dimensional (x, y position, angle), with 50-100 features in a character, but the prototype features are four-dimensional (x, y, position, angle, length), with 10-20 characteristics in a prototype configuration. 
 
+### Classification
+
+Classification is a two-step procedure.
+A class pruner generates a shortlist of character classes that the unknown may match in the first stage.
+Each feature retrieves a bit-vector of classes that it may match from a coarsely quantized 3-dimensional look-up table, and the bit-vectors are averaged over all features.
+The classes with the highest counts (after adjusting for the predicted number of features) are selected for the following stage.
+
+Each unknown characteristic searches for a bit vector of prototypes of the specified class that it potentially match, and then computes the actual similarity between them.
+Because each prototype character class is represented by a logical sum-of-product expression with each term referred to as a configuration, the distance calculation procedure maintains track of the total similarity evidence of each feature in each configuration as well as of each prototype.
+The best combined distance, determined from the summed feature and prototype evidences, is the best across all of the class's recorded configurations. 
+
 
