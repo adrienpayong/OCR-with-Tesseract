@@ -175,6 +175,7 @@ In situations when the number of fonts is restricted, a more font-sensitive adap
 
 Tesseract does not utilize a template classifier, instead using the same features and classifier as the static classifier.
 Apart from the training data, the only significant difference between the static and adaptive classifiers is that the adaptive classifier uses isotropic baseline/x-height normalization, whereas the static classifier normalizes characters by the centroid (first moments) for position and second moments for anisotropic size normalization.
+
 ![source](https://github.com/adrienpayong/OCRproject/blob/main/Capturecl.PNG)
 
 The baseline/x-height normalization improves resilience to noise specks while also making it simpler to discern upper and lower case characters.
