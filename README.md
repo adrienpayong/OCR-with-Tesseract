@@ -114,4 +114,24 @@ The character classifier, which could effortlessly identify broken characters, w
 
 ![source](https://github.com/adrienpayong/OCRproject/blob/main/Capture23.PNG)
 
+## Static Character Classifier
+### Features
+
+An early version of Tesseract made use of topological properties provided by Shillman et al.
+
+Although these properties are beautifully independent of font and size, they are not resilient to the difficulties observed in real-life images, as Bokser demonstrates.
+An intermediate solution proposed using polygonal approximation segments as features, however this technique is likewise not resistant to broken characters.
+For example, in Fig. 6(a), the right side of the shaft is divided into two major portions, but in Fig. 6(b), there is just one component.
+
+
+
+The revolutionary solution is the notion that the characteristics in the unknown do not have to be the same as the features in the training data.
+The segments of a polygonal approximation are utilized for features during training, but in recognition, features of a tiny, fixed length (in normalized units) are retrieved from the outline and matched many-to-one against the clustered prototype features of the training data.
+The short, thick lines in Fig. 6(c) are the extracted characteristics from the unknown, while the thin, longer lines are the clustered segments of the polygonal approximation that are utilized as prototypes.
+One prototype that connects the two pieces is absolutely unique.
+Three features on one side and two on the other are mismatched, but every other prototype and feature is nicely matched.
+
+This example demonstrates how this approach of matching minor characteristics to huge prototypes can easily handle the identification of damaged images.
+Its fundamental issue is that determining the distance between an unknown and a prototype has a very high computational cost. 
+
 
