@@ -30,3 +30,18 @@ The recognition procedure is then repeated twice.
 The first pass attempts to identify each word individually.
 Each suitable term is sent into an adaptive classifier as training data.
 The adaptive classifier is then given the opportunity to detect text farther down the page more correctly. Because the adaptive classifier may have learnt anything important too late to contribute at the top of the page, a second pass through the page is performed, in which words that were not identified well enough are recognized again. In the last step, fuzzy spaces are resolved and multiple assumptions for the x-height are tested in order to identify small-cap tex. 
+
+##  Line and Word Finding
+## Line Finding
+One of the few aspects of Tesseract that has previously been disclosed is the line detection method .
+The line finding technique is meant to detect a skewed page without having to de-skew it, preserving image quality.
+Blob filtering and line creation are critical steps in the process.
+
+Assuming that page layout analysis has previously produced text areas of fairly equal text size, a basic percentile height filter eliminates drop-caps and vertically touching characters.
+Because the median height approximates the text size in the area, it is safe to filter away blobs smaller than some percentage of the median height, which are most likely punctuation, diacritical markings, and noise.
+
+The filtered blobs are more likely to match a model of parallel but sloping non-overlapping lines.
+Sorting and processing the blobs by x-coordinate allows you to assign each blob to a distinct text line while monitoring the slope throughout the page, with a far lower risk of assigning to the wrong text line in the case of skew.
+Once the filtered blobs have been allocated to lines, the baselines are estimated using a least median of squares fit , and the filtered-out blobs are fitted back into the relevant lines.
+
+The last phase in the line construction procedure joins blobs that overlap by at least half horizontally, linking diacritical markings with the right base and appropriately correlating sections of certain damaged letters cap tex. 
