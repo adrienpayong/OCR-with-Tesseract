@@ -184,4 +184,5 @@ It also makes subscript and superscript detection easier, although it needs an e
 Figure 7 depicts three letters in baseline/x-height normalized and moment normalized form. 
 
 Reference: [An Overview of the Tesseract OCR Engine](https://static.googleusercontent.com/media/research.google.com/fr//pubs/archive/33418.pdf)
+[build your custom OCR (optical character recognition) from scratch by using Google Tesseract and YOLO](https://github.com/adrienpayong/OCRproject)
 
