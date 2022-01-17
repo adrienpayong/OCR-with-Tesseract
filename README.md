@@ -123,6 +123,8 @@ Although these properties are beautifully independent of font and size, they are
 An intermediate solution proposed using polygonal approximation segments as features, however this technique is likewise not resistant to broken characters.
 For example, in Fig. 6(a), the right side of the shaft is divided into two major portions, but in Fig. 6(b), there is just one component.
 
+![source](https://github.com/adrienpayong/OCRproject/blob/main/CaptureZE.PNG)
+
 
 
 The revolutionary solution is the notion that the characteristics in the unknown do not have to be the same as the features in the training data.
@@ -132,6 +134,6 @@ One prototype that connects the two pieces is absolutely unique.
 Three features on one side and two on the other are mismatched, but every other prototype and feature is nicely matched.
 
 This example demonstrates how this approach of matching minor characteristics to huge prototypes can easily handle the identification of damaged images.
-Its fundamental issue is that determining the distance between an unknown and a prototype has a very high computational cost. 
+Its fundamental issue is that determining the distance between an unknown and a prototype has a very high computational cost. The features retrieved from the unknown are therefore three-dimensional (x, y position, angle), with 50-100 features in a character, but the prototype features are four-dimensional (x, y, position, angle, length), with 10-20 characteristics in a prototype configuration. 
 
 
