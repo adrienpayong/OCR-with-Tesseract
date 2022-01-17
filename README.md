@@ -55,4 +55,5 @@ The baselines are fitted by grouping the blobs with a fairly consistent deviatio
 A least squares fit is used to fit a quadratic spline to the most populated partition (assumed to be the baseline).
 The quadratic spline has the benefit of being generally stable in this computation, but it has the problem of causing discontinuities when several spline segments are necessary.
 A more classic cubic spline  could be preferred. 
+
 ![source](https://github.com/adrienpayong/OCRproject/blob/main/Capture1.PNG)
