@@ -82,3 +82,18 @@ At this step, spaces around the threshold are rendered fuzzy so that a final jud
 
 ![source](https://github.com/adrienpayong/OCRproject/blob/main/Capture3.PNG)
 
+## Word Recognition
+
+Identifying how a word should be divided into characters is part of the recognition process for any character recognition engine.
+First, the line finding segmentation output is classified.
+The remainder of the word recognition stage is solely applicable to non-fixed-pitch text. 
+
+### Chopping Joined Character
+
+While the output from a word (see is unsatisfying, Tesseract tries to enhance it by slicing the blob with the lowest confidence from the character classifier.
+Concave vertices of a polygonal approximation  of the outline are used to find candidate chop sites, which may contain another concave vertex opposite or a line segment.
+To correctly separate connected characters from the ASCII set, up to three pairs of chop points may be required.
+
+![source](https://github.com/adrienpayong/OCRproject/blob/main/Captureoutline.PNG)
+
+
