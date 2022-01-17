@@ -100,4 +100,14 @@ Figure 4 depicts a series of possible chop spots with arrows and the chosen chop
 Chops are done in descending order of priority.
 Any chop that fails to increase the associator's confidence in the outcome is undone, but not fully discarded, so that the chop may be re-used by the associator later if necessary. 
 
+### Associating Broken Characters
+
+When all possible chops have been explored, the word is delivered to the associator if it is still not good enough.
+The associator searches the segmentation network for feasible combinations of the maximum sliced blobs into candidate characters using an A* (best first) search.
+It does this without actually constructing the segmentation graph, instead keeping a hash table of visited states.
+The A* search works by selecting candidate new states from a priority queue and assessing them by classifying unclassified fragment combinations.
+
+It may be argued that this fully-chop-then-associate strategy is at best inefficient, and at worst prone to missing key chops, and that could be correct.
+The chop-then-associate technique has the benefit of simplifying the data structures necessary to maintain the whole segmentation graph. 
+
 
