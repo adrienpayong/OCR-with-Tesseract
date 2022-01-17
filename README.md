@@ -97,7 +97,6 @@ To correctly separate connected characters from the ASCII set, up to three pairs
 ![source](https://github.com/adrienpayong/OCRproject/blob/main/Captureoutline.PNG)
 
 Figure 4 depicts a series of possible chop spots with arrows and the chosen chop as a line across the outline where the 'r' meets the'm'.
-
 Chops are done in descending order of priority.
 Any chop that fails to increase the associator's confidence in the outcome is undone, but not fully discarded, so that the chop may be re-used by the associator later if necessary. 
 
