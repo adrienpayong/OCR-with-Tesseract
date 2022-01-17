@@ -169,4 +169,16 @@ The rating is calculated by multiplying the normalized distance from the prototy
 Because the overall outline length for all characters inside a word is always the same, ratings for characters within a word may be meaningfully totaled. 
 
 ## Adaptive Classifier
+It has been proposed and proved that the use of an adaptive classifier may help OCR engines.
+Because the static classifier must be capable of generalizing to any font, its ability to distinguish between distinct characters or between characters and non-characters suffers.
+In situations when the number of fonts is restricted, a more font-sensitive adaptive classifier trained from the output of the static classifier is usually utilized to achieve more differentiation within each page.
+
+Tesseract does not utilize a template classifier, instead using the same features and classifier as the static classifier.
+Apart from the training data, the only significant difference between the static and adaptive classifiers is that the adaptive classifier uses isotropic baseline/x-height normalization, whereas the static classifier normalizes characters by the centroid (first moments) for position and second moments for anisotropic size normalization.
+![source](https://github.com/adrienpayong/OCRproject/blob/main/Capturecl.PNG)
+
+The baseline/x-height normalization improves resilience to noise specks while also making it simpler to discern upper and lower case characters.
+The major advantage of character moment normalization is that it removes font aspect ratio and certain font stroke width.
+It also makes subscript and superscript detection easier, although it needs an extra classifier feature to identify certain upper and lower case letters.
+Figure 7 depicts three letters in baseline/x-height normalized and moment normalized form. 
 
