@@ -1,4 +1,4 @@
-# An Overview of the Tesseract OCR Engine
+# Dissecting Tesseract OCR engine
 
 Tesseract is a free and open-source OCR engine created by HP between 1984 and 1994.
 It arrived out of nowhere for the 1995 UNLV Annual Test of OCR Accuracy , shined brilliantly with its findings, and then disappeared behind the same veil of secrecy that it had been constructed under. Details of the architecture and algorithms may now be exposed for the first time.
@@ -182,4 +182,6 @@ The baseline/x-height normalization improves resilience to noise specks while al
 The major advantage of character moment normalization is that it removes font aspect ratio and certain font stroke width.
 It also makes subscript and superscript detection easier, although it needs an extra classifier feature to identify certain upper and lower case letters.
 Figure 7 depicts three letters in baseline/x-height normalized and moment normalized form. 
+
+Reference: ![source](https://static.googleusercontent.com/media/research.google.com/fr//pubs/archive/33418.pdf)
 
