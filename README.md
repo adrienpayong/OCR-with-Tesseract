@@ -29,8 +29,4 @@ Character cells instantly cut fixed pitch text. Proportional text is divided int
 The recognition procedure is then repeated twice.
 The first pass attempts to identify each word individually.
 Each suitable term is sent into an adaptive classifier as training data.
-The adaptive classifier is then given the opportunity to detect text farther down the page more correctly.
-
-Because the adaptive classifier may have learnt anything important too late to contribute at the top of the page, a second pass through the page is performed, in which words that were not identified well enough are recognized again.
-
-In the last step, fuzzy spaces are resolved and multiple assumptions for the x-height are tested in order to identify small-cap tex. 
+The adaptive classifier is then given the opportunity to detect text farther down the page more correctly. Because the adaptive classifier may have learnt anything important too late to contribute at the top of the page, a second pass through the page is performed, in which words that were not identified well enough are recognized again. In the last step, fuzzy spaces are resolved and multiple assumptions for the x-height are tested in order to identify small-cap tex. 
