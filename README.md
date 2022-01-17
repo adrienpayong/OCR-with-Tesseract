@@ -57,3 +57,9 @@ The quadratic spline has the benefit of being generally stable in this computati
 A more classic cubic spline  could be preferred. 
 
 ![source](https://github.com/adrienpayong/OCRproject/blob/main/Capture1.PNG)
+
+Figure 1 depicts a text line with a fitted baseline, descender line, meanline, and ascender line.
+These lines are all "parallel" (the y separation is constant over the length) and slightly bent.
+
+The ascender line is cyan (prints as light gray), whereas the black line above it is straight.
+A closer look reveals that the cyan/gray line is bent in relation to the straight black line above it. 
