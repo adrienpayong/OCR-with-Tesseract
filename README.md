@@ -45,3 +45,13 @@ Sorting and processing the blobs by x-coordinate allows you to assign each blob 
 Once the filtered blobs have been allocated to lines, the baselines are estimated using a least median of squares fit , and the filtered-out blobs are fitted back into the relevant lines.
 
 The last phase in the line construction procedure joins blobs that overlap by at least half horizontally, linking diacritical markings with the right base and appropriately correlating sections of certain damaged letters cap tex. 
+
+## Baseline Fitting
+
+Once the text lines have been identified, the baselines are more accurately fitted using a quadratic spline.
+This was yet another first for an OCR system, allowing Tesseract to handle pages with curved baselines , which are a frequent artifact in scanning, not only at book bindings].
+
+The baselines are fitted by grouping the blobs with a fairly consistent deviation from the initial straight baseline.
+A least squares fit is used to fit a quadratic spline to the most populated partition (assumed to be the baseline).
+The quadratic spline has the benefit of being generally stable in this computation, but it has the problem of causing discontinuities when several spline segments are necessary.
+A more classic cubic spline  could be preferred. 
