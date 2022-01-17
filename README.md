@@ -21,3 +21,16 @@ The first phase is a linked component analysis, in which the component outlines 
 This was a computationally costly design choice at the time, but it had a huge advantage: it is straightforward to discover inverted text and recognize it as simply as black-on-white text by inspecting the nesting of outlines and the number of child and grandchild outlines.
 Tesseract was most likely the first OCR engine capable of handling white-on-black text so easily.
 At this point, outlines are simply nested together to form Blobs. 
+
+Blobs are structured into text lines, and the lines and regions are evaluated to determine if the text is fixed pitch or proportional.
+Depending on the kind of character spacing, text lines are divided into words in a variety of ways.
+Character cells instantly cut fixed pitch text. Proportional text is divided into words with definite and fuzzy spacing.
+
+The recognition procedure is then repeated twice.
+The first pass attempts to identify each word individually.
+Each suitable term is sent into an adaptive classifier as training data.
+The adaptive classifier is then given the opportunity to detect text farther down the page more correctly.
+
+Because the adaptive classifier may have learnt anything important too late to contribute at the top of the page, a second pass through the page is performed, in which words that were not identified well enough are recognized again.
+
+In the last step, fuzzy spaces are resolved and multiple assumptions for the x-height are tested in order to identify small-cap tex. 
