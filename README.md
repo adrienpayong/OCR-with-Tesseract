@@ -183,5 +183,5 @@ The major advantage of character moment normalization is that it removes font as
 It also makes subscript and superscript detection easier, although it needs an extra classifier feature to identify certain upper and lower case letters.
 Figure 7 depicts three letters in baseline/x-height normalized and moment normalized form. 
 
-Reference: ![source](https://static.googleusercontent.com/media/research.google.com/fr//pubs/archive/33418.pdf)
+Reference: [An Overview of the Tesseract OCR Engine](https://static.googleusercontent.com/media/research.google.com/fr//pubs/archive/33418.pdf)
 
