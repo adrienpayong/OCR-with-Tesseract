@@ -8,4 +8,5 @@ The next step of its evolution took place at HP Labs Bristol as a research of OC
 The work focused on enhancing rejection efficiency rather than base-level accuracy.
 Development on this project came to a halt by the end of 1994.
 The engine was sent to UNLV for the 1995 Annual Test of OCR Accuracy, where it outperformed commercial engines at the time.
-HP published Tesseract as open source in late 2005. 
+HP published Tesseract as open source in late 2005.  It is now available
+at https://github.com/tesseract-ocr.
