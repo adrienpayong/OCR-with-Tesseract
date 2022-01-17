@@ -183,7 +183,18 @@ The major advantage of character moment normalization is that it removes font as
 It also makes subscript and superscript detection easier, although it needs an extra classifier feature to identify certain upper and lower case letters.
 Figure 7 depicts three letters in baseline/x-height normalized and moment normalized form. 
 
-Reference: [An Overview of the Tesseract OCR Engine](https://static.googleusercontent.com/media/research.google.com/fr//pubs/archive/33418.pdf)
+## Build your custom OCR (optical character recognition) from scratch by using Google Tesseract and YOLO 
+
+People have relied on paper invoices for a long time, but everything has gone digital, including invoices.
+Reconciling digital invoices is currently a man-made task, but it can be automated to save men from spending hours scrolling through multiple invoices and noting things down in a ledger. This project deals with detecting three
+important classes from the invoices. They are:
+1. Invoice number
+2. Billing Date
+3. Total amount
 
 [build your custom OCR (optical character recognition) from scratch by using Google Tesseract and YOLO](https://github.com/adrienpayong/OCRproject)
+
+Reference: [An Overview of the Tesseract OCR Engine](https://static.googleusercontent.com/media/research.google.com/fr//pubs/archive/33418.pdf)
+
+
 
