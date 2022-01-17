@@ -108,6 +108,10 @@ It does this without actually constructing the segmentation graph, instead keepi
 The A* search works by selecting candidate new states from a priority queue and assessing them by classifying unclassified fragment combinations.
 
 It may be argued that this fully-chop-then-associate strategy is at best inefficient, and at worst prone to missing key chops, and that could be correct.
-The chop-then-associate technique has the benefit of simplifying the data structures necessary to maintain the whole segmentation graph. 
+The chop-then-associate technique has the benefit of simplifying the data structures necessary to maintain the whole segmentation graph. Tesseract's precision on broken characters was well ahead of the commercial engines of the time when the A* segmentation search was initially deployed around 1989.
+Figure 5 is an illustration of this.
+The character classifier, which could effortlessly identify broken characters, was a critical component of that accomplishment. 
+
+![source](https://github.com/adrienpayong/OCRproject/blob/main/Capture23.PNG)
 
 
