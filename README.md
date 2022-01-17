@@ -63,3 +63,11 @@ These lines are all "parallel" (the y separation is constant over the length) an
 
 The ascender line is cyan (prints as light gray), whereas the black line above it is straight.
 A closer look reveals that the cyan/gray line is bent in relation to the straight black line above it. 
+
+## Fixed Pitch Detection and Chopping
+
+Tesseract analyzes the text lines to see whether they are fixed pitch.
+Tesseract slices the words into characters using the pitch when it detects fixed pitch text and disables the chopper and associator on these words for the word recognition stage.Figure 2 is an example of a fixed-pitch word. 
+
+![source](https://github.com/adrienpayong/OCRproject/blob/main/Capture2.PNG)
+
