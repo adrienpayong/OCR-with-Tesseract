@@ -168,3 +168,5 @@ This allows it to be a "confidence" in the sense that larger numbers are better,
 The rating is calculated by multiplying the normalized distance from the prototype by the entire outline length of the unknown character.
 Because the overall outline length for all characters inside a word is always the same, ratings for characters within a word may be meaningfully totaled. 
 
+## Adaptive Classifier
+
